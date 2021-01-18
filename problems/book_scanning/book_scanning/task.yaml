@@ -1,0 +1,7 @@
+name: "book_scanning"
+title: "Book Scanning"
+n_input: 6
+public_testcases: 0, 1, 2, 3, 4, 5
+output_only: True
+score_type: "Sum"
+score_type_parameters: 1.0
