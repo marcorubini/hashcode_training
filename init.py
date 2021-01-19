@@ -285,7 +285,7 @@ def make_scripts(build_dir):
 
     script = """
         #!/bin/bash
-        bash -c 'source {}/activate; cd {}; ./scripts/cmsResourceService -a;'
+        bash -c "source {}/activate; cd {}; ./scripts/cmsResourceService $*;"
     """.format(os.path.join(build_dir, "cms", "venv", "bin"), os.path.join(build_dir, "cms", "lib"))
     with open(os.path.join(build_dir, "cms_start_resources.sh"), "w") as f:
         f.write(script)
@@ -301,8 +301,8 @@ def make_scripts(build_dir):
     script_dir = os.path.join(build_dir, "cms", "lib", "cmscontrib")
     script = """
         #!/bin/bash
-        bash -c "source {}/activate; echo {}/ImportContest.py $*; {}/ImportContest.py $*"
-    """.format(os.path.join(build_dir, "cms", "venv", "bin"), script_dir, script_dir)
+        bash -c "source {}/activate; {}/ImportContest.py $*"
+    """.format(os.path.join(build_dir, "cms", "venv", "bin"), script_dir)
     with open(os.path.join(build_dir, "cms_import_contest.sh"), "w") as f:
         f.write(script)
 
