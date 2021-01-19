@@ -1,11 +1,12 @@
 
-name: "Google Hashcode UnitTN Training"
+name: "google_hashcode_training_2021"
 description: "Google Hashcode 2021 training contest"
 block_hidden_participations: True
 allow_password_authentication: True
 allow_ip_registration: True
 score_precision: 0
 tasks: [
-  "book_scanning" 
+  "book_scanning",
+  "more_pizza"
   ]
 
