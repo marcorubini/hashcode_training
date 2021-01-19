@@ -7,3 +7,6 @@ target_link_libraries(compiler_options INTERFACE "-static")
 
 add_executable(book_scanning.out "book_scanning.cpp")
 target_link_libraries(book_scanning.out PRIVATE compiler_options)
+
+add_executable(more_pizza.out "more_pizza.cpp")
+target_link_libraries(more_pizza.out PRIVATE compiler_options)

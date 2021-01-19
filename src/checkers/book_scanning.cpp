@@ -20,7 +20,8 @@ struct Library {
 
 std::vector<Library> libraries;
 
-void assert_reason(bool x, char const* s, auto&&... args) {
+template<class... Args>
+void assert_reason(bool x, char const* s, Args&&... args) {
   if(!x) {
     char buffer[200];
     snprintf(buffer, 200, s, args...);
