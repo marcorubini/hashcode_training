@@ -165,9 +165,7 @@ auto evaluate_output() {
 }
 
 int main(int argc, char** argv) {
-  auto start_time = std::chrono::steady_clock::now();
-
-  if(argc != 3) {
+  if(argc != 4) {
     fprintf(stdout, "%d\n", 0);
     fprintf(stderr, "Incorrect usage, need input and output file.");
     return 0;
@@ -182,7 +180,7 @@ int main(int argc, char** argv) {
 
     parse_input();
 
-    if(!std::freopen(argv[2], "r", stdin)) {
+    if(!std::freopen(argv[3], "r", stdin)) {
       fprintf(stdout, "%d\n", 0);
       fprintf(stderr, "Output file not found.");
       return 0;
@@ -198,10 +196,4 @@ int main(int argc, char** argv) {
     fprintf(stdout, "%d\n", 0);
     fprintf(stderr, "%s", e.what());
   }
-  
-  auto end_time = std::chrono::steady_clock::now();
-  auto duration = end_time - start_time;
-  long long ms_elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(duration).count();
-  
-  fprintf(stderr, "\nms elapsed: %lld\n", ms_elapsed);
 }

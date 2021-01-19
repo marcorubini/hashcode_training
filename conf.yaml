@@ -1,0 +1,49 @@
+
+isolate:
+  # Block of UIDs and GIDs reserved for sandboxes
+  first_uid: 60000
+  first_gid: 60000
+  num_boxes: 1000
+
+  # Root of the control group hierarchy
+  cg_root: "/sys/fs/cgroup"
+
+database:
+  name: "cmsdb"
+  user: "cmsdb"
+  password: "cmsdb"
+
+cms:
+  log_service_port: 20000
+  scoring_service_port: 20001
+  checker_service_port: 20002
+  evaluation_service_port: 20003
+  contest_web_server_port: 20004
+  admin_web_server_port: 20005
+  resource_service_port: 20006
+
+  num_workers: 3
+  worker_service_port_begin: 20007
+
+  num_proxies: 2
+  proxy_service_port_begin: 20010
+
+  contest_listen_port: 8080
+  admin_listen_port: 8081
+
+  admin_cookie_duration: 36000
+  cookie_duration: 10800
+
+  max_file_size: 1048576
+  max_submission_length: 10000000
+  max_input_length: 50000000
+  submit_local_copy: True
+
+  secret_key: "8e045a51e4b102ea803c06f92841a1fc"
+  stl_path: "/usr/share/cppreference/doc/html"
+
+rankings:
+  port: 8082
+  username: "usern4me"
+  password: "passw0rd"
+
