@@ -7,6 +7,7 @@ allow_ip_registration: True
 score_precision: 0
 tasks: [
   "book_scanning",
-  "more_pizza"
+  "more_pizza",
+  "even_more_pizza"
   ]
 
