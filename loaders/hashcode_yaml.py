@@ -60,7 +60,7 @@ class HashcodeLoader(ContestLoader, TaskLoader, UserLoader, TeamLoader):
             args["primary_statements"] = ["en"]
 
         args["submission_format"] = []
-        for filename in os.listdir(os.path.join(self.path, "input")):
+        for filename in sorted(os.listdir(os.path.join(self.path, "input"))):
             basename = os.path.splitext(filename)[0]
             args["submission_format"].append("output_" + basename + ".txt")
 
@@ -90,7 +90,7 @@ class HashcodeLoader(ContestLoader, TaskLoader, UserLoader, TeamLoader):
             self.file_cacher.put_file_from_path(checker_path, "Checker for task {}".format(task_name))) ]
 
         args["testcases"] = []
-        for filename in os.listdir(os.path.join(self.path, "input")):
+        for filename in sorted(os.listdir(os.path.join(self.path, "input"))):
             basename = os.path.splitext(filename)[0]
             digest = self.file_cacher.put_file_from_path(os.path.join(self.path, "input", filename), 
                     "Input {} for task {}".format(basename, task_name))
