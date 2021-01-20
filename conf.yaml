@@ -32,10 +32,10 @@ cms:
   admin_listen_port: 8081
 
   admin_cookie_duration: 36000
-  cookie_duration: 10800
+  cookie_duration: 108000
 
-  max_file_size: 1048576
-  max_submission_length: 10000000
+  max_file_size: 1073741824
+  max_submission_length:  1073741824 
   max_input_length: 50000000
   submit_local_copy: True
 
@@ -44,6 +44,6 @@ cms:
 
 rankings:
   port: 8082
-  username: "usern4me"
-  password: "passw0rd"
+  username: "secret_usern4me"
+  password: "secret_passw0rd"
 
